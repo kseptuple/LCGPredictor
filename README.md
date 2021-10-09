@@ -34,3 +34,5 @@ First we examine the least significant bit of the number. If it is 0, do nothing
 Then we examine the second least significant bit. If it is 0, do nothing; if it is 1, we push the number -2 times using `f[-2]`. The second least significant bit is 0 now; and the least significant bit keeps to be 0, due to the first property.  
 
 Then the third least significant bit, and so on. Finally, we will make every bit of the number to become 0, so the number becomes 0. We just need to add up how much times we have pushed the number back, and this is how many times of recursion are needed to get this number.  
+#### Another solution in which even `f[-1]` is not needed
+Instead of pushing number back, we can push number forward. For the least significant bit of the number, if it is 1, we push the number once using `f[1]`. for the second least significant bit, push the number twice using `f[2]` and so on. We still need to add up how much times we have pushed the number forward when we reach 0, and then we just use 2^n to substract it to get the actual times we needed.  
