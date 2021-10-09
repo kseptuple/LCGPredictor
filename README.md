@@ -16,7 +16,7 @@ Now, if we calculate `f[2](f[1](x))`, we can get `f[3]`, which pushes the random
 
 With the same way, we can get `f[1 + 2 + 4]`, `f[1 + 2 + 4 + 8]`, until `f[1 + 2 + 4 + 8 + ... + 2^(n-1)]`. The last formula pushes the random number 2^n - 1 times, and it actually pushes -1 time as push 2^n times is equal to doing nothing. So this is how we get the inverse formula `f[-1]`.  
 
-Then we can get `f[-2](x)`, `f[-4](x)`, `f[-8](x)`, ... `f[-2^(n-1)](x)`.  
+Then we can get `f[-2]`, `f[-4]`, `f[-8]`, ... `f[-2^(n-1)]`.  
 ### Part 2: Get random number after N times of recursion
 This is actually already shown is the last part. As we have `f[1]`, `f[2]`, `f[4]`, `f[8]` and so on, we can have any `f[n]` just by combining certain formulas. For example, if we need `f[100]`, we can do `f[100] = f[64 + 32 + 4]`.  
 ### Part 3: Get how many times of recursion are needed to generate a certain random number
