@@ -29,8 +29,8 @@ These 2 properties are NOT mathematically proved, they just always work.
 
 With this 2 properties, this is how it works:  
 
-First we exam the least significant bit of the number. If it is 0, do nothing; if it is 1, we push the number -1 times. Due to the second property, the least significant bit is 0 now.  
+First we exam the least significant bit of the number. If it is 0, do nothing; if it is 1, we push the number -1 times using `f[-1]`. Due to the second property, the least significant bit is 0 now.  
 
-Then we exam the second least significant bit. If it is 0, do nothing; if it is 1, we push the number -2 times. The second least significant bit is 0 now; and the least significant bit keeps to be 0 due to the first property.  
+Then we exam the second least significant bit. If it is 0, do nothing; if it is 1, we push the number -2 times using `f[-2]`. The second least significant bit is 0 now; and the least significant bit keeps to be 0 due to the first property.  
 
 Then the third least significant bit, and so on. Finally, we will make every bit of the number to become 0, so the number become 0. We just need to add up how much times we have pushed the number back, and this is how many times of recursion are needed to get this number.  
