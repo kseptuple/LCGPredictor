@@ -10,13 +10,13 @@ Let's assume the orininal formula is `f[1](x) = a[1] * x + c[1]` (omitting the m
 
 Then, we have `f[1](f[1](x)) = a[1] * (a[1] * x + c[1]) + c[1] = a[1] * a[1] * x + a[1] * c[1] + c[1]`, this pushes the random number twice. Let `a[2] = a[1] * a[1]`, `c[2] = a[1] * c[1] + c[1]`, we get a formula: `f[2](x) = a[2] * x + c[2]`, which pushes the random number twice.  
 
-We do this repeatedly and we will get `f[4]`, `f[8]`, `f[16]`, `f[32]`, ... `f[2^(n-1)]`, which respectively pushes the random number 4 times, 8 times, 16 times, 32 times, ... , 2^(n-1) times. Push the random number 2^n times will just get the number itself so we don't do that.  
+We do this repeatedly and we will get `f[4]`, `f[8]`, `f[16]`, `f[32]`, ..., `f[2^(n-1)]`, which respectively pushes the random number 4 times, 8 times, 16 times, 32 times, ..., 2^(n-1) times. Push the random number 2^n times will just get the number itself so we don't do that.  
 
 Now, if we calculate `f[2](f[1](x))`, we can get `f[3]`, which pushes the random number 3 times. So we have `f[3](x) = a[3] * x + c[3]`, where `a[3] = a[2] * a[1]`, `c[3] = a[2] * c[1] + c[2]`. It seems that `c[3]` can have 2 different expressions: `c[3] = a[2] * c[1] + c[2]` and `c[3] = a[1] * c[2] + c[1]`, but they are actually the same.  
 
 With the same way, we can get `f[1 + 2 + 4]`, `f[1 + 2 + 4 + 8]`, until `f[1 + 2 + 4 + 8 + ... + 2^(n-1)]`. The last formula pushes the random number 2^n - 1 times, and it actually pushes -1 time as push 2^n times is equal to doing nothing. So this is how we get the inverse formula `f[-1]`.  
 
-Then we can get `f[-2]`, `f[-4]`, `f[-8]`, ... `f[-2^(n-1)]`.  
+Then we can get `f[-2]`, `f[-4]`, `f[-8]`, ..., `f[-2^(n-1)]`.  
 ### Part 2: Get random number after N times of recursion
 This is actually already shown is the last part. As we have `f[1]`, `f[2]`, `f[4]`, `f[8]` and so on, we can have any `f[n]` just by combining certain formulas. For example, if we need `f[100]`, we can do `f[100] = f[64 + 32 + 4]`.  
 ### Part 3: Get how many times of recursion are needed to generate a certain random number
