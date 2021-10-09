@@ -1,5 +1,5 @@
 # LCGPredictor
-When the formula of a liner congruential generator (LCG) is known, this program can calculate:
+When the formula used by a liner congruential generator (LCG) is known, this program can calculate:
 * The inverse formula, which generate the last random number from the next one.
 * What number will it generate after exactly N times of recursion.
 * How many times of recursion are needed to generate a certain random number starting from 0.
